@@ -22,6 +22,8 @@ Snipit.flyout = (function() {
 					network = btn.attr('data-snipit-network');
 				data.action = 'share';
 
+				console.log(data);
+
 				switch(network) {
 					case 'twitter' : shareTwitter(data); break;
 					case 'facebook' : shareFacebook(data); break;
@@ -74,7 +76,7 @@ Snipit.flyout = (function() {
 	function getSnipitData() {
 		return  {
 			articleID: el.find('.headline a').attr('href').replace('http://www.guardian.co.uk', ''),
-			content: el.find('.selected-content').html(),
+			content: $.trim(el.find('.selected-content').html()),
 			email: Snipit.id.localUserData().primaryEmailAddress,
 			contentType: 'text', // TODO
 			reference: '?' // TODO
@@ -104,12 +106,39 @@ Snipit.flyout = (function() {
 			});
 	}
 
+	function shorten(content) {
+		console.log(length);
+		content = (content.length > 140) ? content.substring(0, 140) + "..." : content;
+		content = '"' + content + '"';
+		return content;
+	}
+
 	function shareTwitter(data) {
-		console.log('Snipit.share twitter', data);
+		var url = "http://twitter.com/home?status=",
+			content = shorten(data.content),
+			tweet = encodeURIComponent(content + " via @guardian");
+
+		url += tweet;
+
+		window.open(url, "Share on Twitter");
 	}
 
 	function shareFacebook(data) {
-		console.log('Snipit.share facebook', data);
+		var url = "https://www.facebook.com/dialog/feed?",
+			location = window.location.toString(),
+			config = {
+				app_id : 180444840287,
+				link : location,
+				name : data.content,
+				picture : $('meta[property="og:image"]').attr('content'),
+				caption : $.trim(data.content),
+				description : "I just clipped this on The Guardian",
+				redirect_uri : location
+			};
+			
+		url += $.param(config, true);
+
+		window.open(url, "Share on Facebook");
 	}
 
 	function close() {
