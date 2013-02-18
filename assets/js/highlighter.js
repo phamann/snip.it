@@ -4,18 +4,16 @@ var Snipit = Snipit || {};
 Snipit.highlighter = (function() {
 
     var config = Snipit.config,
-        $article = $('#article-wrapper');
+        $article = $('#article-wrapper'),
+        $paras = $('#article-body-blocks p');
 
     function init() {
         if(Snipit.config.isWrapped) return;
 
-        console.log('wrapping');
+        var pattern = /\n|([^\r\n.!?]+([.!?]+|$))/gim;
 
-        var paras = $('#article-body-blocks p'),
-            pattern = /\n|([^\r\n.!?]+([.!?]+|$))/gim;
-
-        for(var i = 0, length = paras.length; i < length; i++) {
-          var text = paras[i].innerHTML,
+        for(var i = 0, length = $paras.length; i < length; i++) {
+          var text = $paras[i].innerHTML,
               sentences = text.match(pattern),
               wrapped = [];
           
@@ -24,7 +22,7 @@ Snipit.highlighter = (function() {
                     wrapped.push('<span class="snipit-snip">' + el + "</span>");
                 });
               
-                paras[i].innerHTML = wrapped.join();
+                $paras[i].innerHTML = wrapped.join();
             }
         }
 
@@ -33,6 +31,9 @@ Snipit.highlighter = (function() {
 
     function click(e) {
         e.preventDefault();
+
+        $('.snipit-snip').removeClass('is-active');
+        $(this).addClass('is-active');
 
         Snipit.flyout.open({
             article_link: window.location.toString(),
