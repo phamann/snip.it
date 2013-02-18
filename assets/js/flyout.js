@@ -15,7 +15,7 @@ Snipit.flyout = (function() {
 		share: function() {},
 		comment: function() {},
 		embed: function() {}
-	}
+	};
 
 	function init() {
 		el = $('<div class="snipit-flyout-container"></div>')
@@ -35,11 +35,17 @@ Snipit.flyout = (function() {
 
 	}
 
+	function close() {
+		el.hide();
+	}
+
 	function open(content, position) {
 		console.log('Snipit.flyout.open');
 		var url = chrome.extension.getURL('flyout.html'),
 			contentBit,
 			snipitBox;
+
+		close();
 
 		$.get(url)
 			.then(function(html) {

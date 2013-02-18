@@ -1008,12 +1008,13 @@ ul.icons {
   background-color: #F3F3F3;
   border: none;
   cursor: pointer;
-  border-radius: 6 px; }
+  border-radius: 6px; }
 
 .snipit-cta-btn.is-active {
   background-color: #FFFF9C; }
 
-.snipit-is-active .snipit-snip:hover {
+.snipit-is-active .snipit-snip:hover,
+.snipit-snip.is-active {
   cursor: pointer;
   background-color: #FFFF9C;
   text-shadow: 1px 1px 0px white; }
