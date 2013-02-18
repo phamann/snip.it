@@ -22,12 +22,11 @@ Snipit.flyout = (function() {
 					network = btn.attr('data-snipit-network');
 				data.action = 'share';
 
-				console.log(data);
-
 				switch(network) {
 					case 'twitter' : shareTwitter(data); break;
 					case 'facebook' : shareFacebook(data); break;
 				}
+				save(data);
 			},
 			comment: function() {
 				var data = getSnipitData();
