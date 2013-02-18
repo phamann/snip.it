@@ -6,7 +6,7 @@
   "version": "0.1",
   "content_scripts": [
     {
-      "matches": ["http://www.guardian.com/*"],
+      "matches": ["http://www.guardian.co.uk/*"],
       "css": ["assets/css/style.css"],
       "js": ["assets/js/lib/jquery.min.js", "snipit.js"]
     }
