@@ -1008,6 +1008,18 @@ ul.icons {
 .icon-folder-open-alt:before {
   content: "\f115"; }
 
+.snipit-cta-btn {
+  display: inline-block;
+  padding: 5px;
+  background-color: #cccccc !important;
+  border: none;
+  cursor: pointer; }
+
+.snipit-is-active .snipit-snip:hover {
+  cursor: pointer;
+  background-color: #e6eaf3;
+  text-shadow: 1px 1px 0px white; }
+
 .snipit-flyout .content {
   border-right: 1px dotted #ededed;
   float: left;
