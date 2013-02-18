@@ -38,7 +38,8 @@ Snipit.highlighter = (function() {
         Snipit.flyout.open({
             article_link: window.location.toString(),
             article_headline: $('h1[itemprop*="headline"]').text(),
-            selected_content: $(e.target).text()
+            selected_content: $(e.target).text(),
+            reference: $(e.target).getPath()
         }, {
             top: e.pageY,
             left: e.pageX

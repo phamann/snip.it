@@ -78,7 +78,7 @@ Snipit.flyout = (function() {
 			content: el.find('.selected-content').html(),
 			email: Snipit.id.localUserData().primaryEmailAddress,
 			contentType: 'text', // TODO
-			reference: '?' // TODO
+			reference: el.find('[data-html-reference]').attr('data-html-reference') // TODO
 		};
 	}
 
