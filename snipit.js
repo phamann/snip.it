@@ -7,6 +7,7 @@ Snipit.config = {
 };
 
 Snipit.init = function() {
+    Snipit.setIdSdk();
     Snipit.cta.show();
 	Snipit.flyout.init();
 };
@@ -26,6 +27,12 @@ Snipit.cta = {
     bind: function() {
         $('.snipit-cta-btn').on('click', function(e) {
             e.preventDefault();
+
+            // ID
+            if (!Snipit.id.localUserData()) {
+                Snipit.id.showLoginIfNotLoggedIn();
+                return;
+            }
 
             if(!Snipit.config.isWrapped) {
                 Snipit.highlighter.init();
