@@ -9,6 +9,8 @@ Snipit.highlighter = (function() {
     function init() {
         if(Snipit.config.isWrapped) return;
 
+        console.log('wrapping');
+
         var paras = $('#article-body-blocks p'),
             pattern = /\n|([^\r\n.!?]+([.!?]+|$))/gim;
 
@@ -17,11 +19,13 @@ Snipit.highlighter = (function() {
               sentences = text.match(pattern),
               wrapped = [];
           
-          sentences.forEach(function(el){
-            wrapped.push('<span class="snipit-snip">' + el + "</span>");
-          });
-          
-          paras[i].innerHTML = wrapped.join();
+            if(sentences && sentences.length) {
+                sentences.forEach(function(el){
+                    wrapped.push('<span class="snipit-snip">' + el + "</span>");
+                });
+              
+                paras[i].innerHTML = wrapped.join();
+            }
         }
 
         Snipit.config.isWrapped = true;

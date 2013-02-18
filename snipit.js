@@ -7,31 +7,43 @@ Snipit.config = {
 };
 
 Snipit.init = function() {
-    Snipit.showCta();
-    Snipit.highlighter.init();
+    Snipit.cta.show();
 	Snipit.flyout.init();
 };
 
-Snipit.showCta = function() {
-    var tpl = '<li class="full-line snipit-cta"><button class="snipit-cta-btn">Snipit</button></li>';
-    $('#article-toolbox-side').prepend(tpl);
+Snipit.cta = {
+    show: function() {
+        var tpl = '<li class="full-line snipit-cta">';
+            tpl += '<button class="snipit-cta-btn">';
+            tpl += '<i class="icon-cut"></i>Snipit</button></li>';
 
-    $('.snipit-cta-btn').on('click', function(e) {
-        e.preventDefault();
+        //Massive hack, have to wait until share buttons have loaded :(
+        window.setTimeout(function() {
+            $('.undocked-share.share-links').prepend(tpl);
+            Snipit.cta.bind();
+        }, 1000);
+    },
+    bind: function() {
+        $('.snipit-cta-btn').on('click', function(e) {
+            e.preventDefault();
 
-        if(!Snipit.config.isWrapped) {
-            Snipit.highlighter.init();
-        }
+            if(!Snipit.config.isWrapped) {
+                Snipit.highlighter.init();
+            }
 
-        if(Snipit.config.isActive) {
-            Snipit.highlighter.unbind();
-            Snipit.config.isActive = false;
-        } else {
-            Snipit.highlighter.bind();
-            Snipit.config.isActive = true;
-        }
-    });
+            if(Snipit.config.isActive) {
+                $(this).removeClass('is-active');
+                Snipit.highlighter.unbind();
+                Snipit.config.isActive = false;
+            } else {
+                $(this).addClass('is-active');
+                Snipit.highlighter.bind();
+                Snipit.config.isActive = true;
+            }
+        });
+    }
 };
+
 
 //Kick it all of on domready
 $(document).ready(function() {
