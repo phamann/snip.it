@@ -12,8 +12,8 @@ var IDENTITY = IDENTITY || {};
         empty = function() {},
         urls = {
             validFrom: 'guqa.co.uk',
-            api: 'https://id.qa.dev-guardianapis.com',
-            web: 'https://id.guqa.co.uk'
+            api: 'https://id.guardianapis.com',
+            web: 'https://id.guardian.co.uk'
         },
         cookies = {
             user: 'GU_U'
