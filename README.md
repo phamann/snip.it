@@ -9,4 +9,4 @@ Currently setup as a browser plugin. To install:
 -- Open extensions window (window>extenstions)
 -- Make sure *developer mode* is checked (top right)
 -- Click "load unpacked extensions..."
--- Navigate to snipit.js in your cloned repo
+-- Navigate to snip.it folder and click "select"

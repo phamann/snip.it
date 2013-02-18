@@ -4,8 +4,14 @@
   "name": "Guardian Snip.it",
   "description": "Snippets and clipping service for the Guardian users",
   "version": "0.1",
-  
+  "content_scripts": [
+    {
+      "matches": ["http://www.guardian.com/*"],
+      "css": ["assets/css/style.css"],
+      "js": ["assets/js/lib/jquery.min.js", "snipit.js"]
+    }
+  ],
   "permissions": [
-    "https://secure.flickr.com/"
+    "https://*.guardian.co.uk/"
   ]
 }
