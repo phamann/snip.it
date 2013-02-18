@@ -8,7 +8,12 @@
     {
       "matches": ["http://www.guardian.co.uk/*"],
       "css": ["assets/css/style.css"],
-      "js": ["assets/js/lib/jquery.min.js", "snipit.js"]
+      "js": [
+        "assets/js/lib/jquery.min.js",
+        "assets/js/flyout.js",
+        "assets/js/highlighter.js",
+        "snipit.js"
+      ]
     }
   ],
   "permissions": [

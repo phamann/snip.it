@@ -1,22 +1,22 @@
-SnipIt = {};
+//Global
+var Snipit = Snipit || {};
 
-SnipIt.init = function() {
-    this.showCta();
-    this.bind();
+Snipit.init = function() {
+    Snipit.showCta();
+    Snipit.highlighter.init();
 };
 
-SnipIt.showCta = function() {
+Snipit.showCta = function() {
     var tpl = '<li class="full-line snipit"><a clas="snipit-cta">Snip.it</a></li>';
-    $('.share-links').append(tpl);
+    $('.share-links.floating').append(tpl);
 };
 
-SnipIt.bind = function() {
-
-};
-
+//Kick it all of on domready
 $(document).ready(function() {
     var isArticle = ($('#article-wrapper').length > 0);
     if(isArticle) {
-        SnipIt.init();
+        Snipit.init();
     }
 });
+
+
