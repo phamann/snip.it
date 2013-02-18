@@ -29,7 +29,15 @@ Snipit.highlighter = (function() {
 
     function click(e) {
         e.preventDefault();
-        
+
+        Snipit.flyout.open({
+            article_link: window.location.toString(),
+            article_headline: $('h1[itemprop*="headline"]').text(),
+            selected_content: $(e.target).text()
+        }, {
+            top: e.pageY,
+            left: e.pageX
+        });
     }
 
     //Bind event handlers

@@ -1011,9 +1011,8 @@ ul.icons {
 
 .snipit-is-active .snipit-snip:hover {
   cursor: pointer;
-  background-color: #e6eaf3;
-  text-shadow: 1px 1px 0px white;
-  text-decoration: none; }
+  background-color: #FFFF9C;
+  text-shadow: 1px 1px 0px white; }
 
 .snipit-logo {
   background: #f8f8f8;
