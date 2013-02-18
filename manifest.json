@@ -10,6 +10,7 @@
       "css": ["assets/css/style.css"],
       "js": [
         "assets/js/lib/jquery.min.js",
+        "assets/js/lib/id.js",
         "assets/js/flyout.js",
         "assets/js/highlighter.js",
         "snipit.js"

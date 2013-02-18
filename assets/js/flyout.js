@@ -9,8 +9,30 @@
  */
 var Snipit = Snipit || {};
 Snipit.flyout = (function() {
+	var el,
+		actions = {
+		save: function() {},
+		share: function() {},
+		comment: function() {},
+		embed: function() {}
+	}
+
 	function init() {
-		console.log('Snipit.flyout.init');
+		el = $('<div class="snipit-flyout-container"></div>')
+			.css({ display: 'none' })
+			.appendTo('body');
+
+		el.on('click', '[data-snipit-action]', function(e) {
+			var actionButton = $(this),
+				action = actionButton.attr('data-snipit-action');
+
+			console.log(action);
+			actions[action]();
+		});
+	}
+
+	function save(data) {
+
 	}
 
 	function open(content, position) {
@@ -27,16 +49,10 @@ Snipit.flyout = (function() {
 				}
 
 				snipitBox = $(html);
-				snipitBox.css({ top: position.top, left: position.left });
-				$('body').append(snipitBox);
 
-				// TODO this definitely shoudn't be done like this
-				snipitBox.on('click', '[data-snipit-action]', function() {
-					var el = $(this),
-						action = el.attr('data-snipit-action');
-
-					console.log(action);
-				});
+				el.empty()
+					.append(snipitBox)
+					.css({ display: 'block', top: position.top, left: position.left });
 			});
 	}
 
