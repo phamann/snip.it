@@ -1064,3 +1064,9 @@ ul.icons {
       margin-bottom: 15px; }
       .snipit-flyout-container .menu .menu-item a {
         text-decoration: none; }
+
+.snipit-list {
+  margin: 15px 0; }
+  .snipit-list .snipit-list-item {
+    border-bottom: 1px solid #ededed;
+    padding: 5px; }

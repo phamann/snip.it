@@ -10,6 +10,7 @@ Snipit.init = function() {
     Snipit.setIdSdk();
     Snipit.cta.show();
 	Snipit.flyout.init();
+	Snipit.list.init();
 };
 
 Snipit.setIdSdk = function() {
