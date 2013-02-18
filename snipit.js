@@ -13,8 +13,8 @@ Snipit.init = function() {
 };
 
 Snipit.setIdSdk = function() {
-	Snipit.id = IDENTITY.guardian_idToolkit;
-}
+    Snipit.id = IDENTITY.guardian_idToolkit;
+};
 
 Snipit.cta = {
     show: function() {
