@@ -12,6 +12,10 @@ Snipit.init = function() {
 	Snipit.flyout.init();
 };
 
+Snipit.setIdSdk = function() {
+    Snipit.id = IDENTITY.guardian_idToolkit;
+};
+
 Snipit.cta = {
     show: function() {
         var tpl = '<li class="full-line snipit-cta">';
