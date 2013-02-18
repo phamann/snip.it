@@ -40,8 +40,14 @@ Snipit.flyout = (function() {
 			var actionButton = $(this),
 				action = actionButton.attr('data-snipit-action');
 
-			console.log(action);
+			console.log('Snipit.flyout.action', action);
 			actions[action]();
+		});
+
+		$(document).on('click', function(e) {
+			if ($(e.target).parents('.snipit-flyout-container').length === 0) {
+				close();
+			}
 		});
 	}
 
@@ -88,6 +94,11 @@ Snipit.flyout = (function() {
 					.append(snipitBox)
 					.css({ display: 'block', top: position.top, left: position.left });
 			});
+	}
+
+	function close() {
+		console.log('Snipit.flyout.close');
+		el.empty().hide();
 	}
 
 	return {
