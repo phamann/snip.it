@@ -28,6 +28,7 @@ Snipit.cta = {
             Snipit.cta.bind();
         }, 1000);
     },
+
     bind: function() {
         $('.snipit-cta-btn').on('click', function(e) {
             e.preventDefault();

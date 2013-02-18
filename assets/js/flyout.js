@@ -10,12 +10,26 @@
 var Snipit = Snipit || {};
 Snipit.flyout = (function() {
 	var el,
+		api_url = 'http://8kf6.t.proxylocal.com/api/snippet',
 		actions = {
-		save: function() {},
-		share: function() {},
-		comment: function() {},
-		embed: function() {}
-	};
+			save: function() {
+				var data = getSnipitData();
+				data.action = 'save';
+				save(data);
+			},
+			share: function() {
+				var data = getSnipitData();
+				data.action = 'share';
+			},
+			comment: function() {
+				var data = getSnipitData();
+				data.action = 'comment';
+			},
+			embed: function() {
+				var data = getSnipitData();
+				data.action = 'embed';
+			}
+		}
 
 	function init() {
 		el = $('<div class="snipit-flyout-container"></div>')
@@ -26,17 +40,39 @@ Snipit.flyout = (function() {
 			var actionButton = $(this),
 				action = actionButton.attr('data-snipit-action');
 
-			console.log(action);
+			console.log('Snipit.flyout.action', action);
 			actions[action]();
+		});
+
+		$(document).on('click', function(e) {
+			if ($(e.target).parents('.snipit-flyout-container').length === 0) {
+				close();
+			}
 		});
 	}
 
 	function save(data) {
-
+		$.ajax({
+			url: api_url,
+			data: data,
+			type: 'post',
+			success: function(res) {
+				console.log(res);
+			},
+			error: function(a, b, c) {
+				console.log(a, b, c);
+			}
+		})
 	}
 
-	function close() {
-		el.hide();
+	function getSnipitData() {
+		return  {
+			articleID: el.find('.headline a').attr('href').replace('http://www.guardian.co.uk', ''),
+			content: el.find('.selected-content').html(),
+			email: Snipit.id.localUserData().primaryEmailAddress,
+			contentType: 'text', // TODO
+			reference: '?' // TODO
+		}
 	}
 
 	function open(content, position) {
@@ -60,6 +96,11 @@ Snipit.flyout = (function() {
 					.append(snipitBox)
 					.css({ display: 'block', top: position.top, left: position.left });
 			});
+	}
+
+	function close() {
+		console.log('Snipit.flyout.close');
+		el.empty().hide();
 	}
 
 	return {
