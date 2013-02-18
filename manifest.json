@@ -13,6 +13,7 @@
         "assets/js/lib/id.js",
         "assets/js/flyout.js",
         "assets/js/highlighter.js",
+        "assets/js/list.js",
         "snipit.js"
       ]
     }

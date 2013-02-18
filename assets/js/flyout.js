@@ -61,11 +61,12 @@ Snipit.flyout = (function() {
 
 	function save(data) {
 		$.ajax({
-			url: api_url,
-			data: data,
+			url: api_url + '/' + data.action,
+			data: JSON.stringify(data),
 			type: 'post',
+			contentType : 'application/json',
 			success: function(res) {
-				console.log(res);
+				console.log('Saved', res);
 			},
 			error: function(a, b, c) {
 				console.log(a, b, c);
@@ -74,12 +75,13 @@ Snipit.flyout = (function() {
 	}
 
 	function getSnipitData() {
+		console.log(Snipit.id.localUserData().primaryEmailAddress);
 		return  {
-			articleID: el.find('.headline a').attr('href').replace('http://www.guardian.co.uk', ''),
+			articleID: el.find('.headline a').attr('href').replace('http://www.guardian.co.uk', '').replace(window.location.search, '').replace(window.location.hash, ''),
 			content: $.trim(el.find('.selected-content').html()),
 			email: Snipit.id.localUserData().primaryEmailAddress,
 			contentType: 'text', // TODO
-			reference: '?' // TODO
+			reference: el.find('[data-html-reference]').attr('data-html-reference') // TODO
 		};
 	}
 
