@@ -1,34 +1,59 @@
+.snipit-logo {
+	background: #f8f8f8;
+	border: 1px solid #ededed;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
 .snipit-flyout {
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
+	color: #333;
+	font-family: "EgyptianText", georgia, serif;
+	font-size: 16px;
+	max-width: 400px;
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	z-index: 1000;
+
 	.content {
 		border-right: 1px dotted #ededed;
 		float: left;
 		padding: 2%;
-		width: 76%;
+		width: 86%;
 
 		.headline {
-			margin: 0 0 2% 0;
+			font-size: 1rem;
+			margin: 0 0 15px 0;
 
 			a {
 				color: #333;
 				text-decoration: none;
 			}
 		}
+
 		.selected-content {
 			border: 1px solid #ededed;
-			padding: 1%;
+			font-size: 0.75rem;
+			padding: 10px;
 		}
-
-
 	}
 	.menu {
 		float: left;
 		padding: 2% 0 0 2%;
-		width: 17%;
+		width: 7%;
 
 		.menu-item {
 			cursor: pointer;
 			font-size: 1.5rem;
 			margin-bottom: 15px;
+
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 }

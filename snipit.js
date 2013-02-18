@@ -8,6 +8,8 @@ Snipit.config = {
 
 Snipit.init = function() {
     Snipit.showCta();
+    Snipit.highlighter.init();
+	Snipit.flyout.init();
 };
 
 Snipit.showCta = function() {
@@ -38,5 +40,3 @@ $(document).ready(function() {
         Snipit.init();
     }
 });
-
-

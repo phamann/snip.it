@@ -18,5 +18,8 @@
   ],
   "permissions": [
     "https://*.guardian.co.uk/"
+  ],
+  "web_accessible_resources": [
+    "flyout.html"
   ]
 }
