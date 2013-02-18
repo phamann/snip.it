@@ -1002,9 +1002,17 @@ ul.icons {
 .icon-folder-open-alt:before {
   content: "\f115"; }
 
+.snipit-logo {
+  background: #f8f8f8;
+  border: 1px solid #ededed;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 10px; }
+
 .snipit-flyout {
   background: #fff;
-  border: 1px solid #333333;
+  border: 1px solid #cccccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #333;
   font-family: "EgyptianText", georgia, serif;
   font-size: 16px;
@@ -1027,7 +1035,7 @@ ul.icons {
     .snipit-flyout .content .selected-content {
       border: 1px solid #ededed;
       font-size: 0.75rem;
-      padding: 1%; }
+      padding: 10px; }
   .snipit-flyout .menu {
     float: left;
     padding: 2% 0 0 2%;
