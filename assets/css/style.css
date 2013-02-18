@@ -1004,10 +1004,14 @@ ul.icons {
 
 .snipit-cta-btn {
   display: inline-block;
-  padding: 5px;
-  background-color: #cccccc !important;
+  padding: 6px;
+  background-color: #F3F3F3;
   border: none;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 6 px; }
+
+.snipit-cta-btn.is-active {
+  background-color: #FFFF9C; }
 
 .snipit-is-active .snipit-snip:hover {
   cursor: pointer;
