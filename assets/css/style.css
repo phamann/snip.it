@@ -1052,7 +1052,8 @@ ul.icons {
     .snipit-flyout-container .content .selected-content {
       border: 1px solid #ededed;
       font-size: 0.75rem;
-      padding: 10px; }
+      line-height: 1.6em;
+      padding: 20px 10px; }
   .snipit-flyout-container .menu {
     float: left;
     padding: 2% 0 0 2%;

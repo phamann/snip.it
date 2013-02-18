@@ -17,9 +17,15 @@ Snipit.flyout = (function() {
 				data.action = 'save';
 				save(data);
 			},
-			share: function() {
-				var data = getSnipitData();
+			share: function(btn) {
+				var data = getSnipitData(),
+					network = btn.attr('data-snipit-network');
 				data.action = 'share';
+
+				switch(network) {
+					case 'twitter' : shareTwitter(data); break;
+					case 'facebook' : shareFacebook(data); break;
+				}
 			},
 			comment: function() {
 				var data = getSnipitData();
@@ -29,7 +35,7 @@ Snipit.flyout = (function() {
 				var data = getSnipitData();
 				data.action = 'embed';
 			}
-		}
+		};
 
 	function init() {
 		el = $('<div class="snipit-flyout-container"></div>')
@@ -41,7 +47,7 @@ Snipit.flyout = (function() {
 				action = actionButton.attr('data-snipit-action');
 
 			console.log('Snipit.flyout.action', action);
-			actions[action]();
+			actions[action](actionButton);
 		});
 
 		$(document).on('click', function(e) {
@@ -62,7 +68,7 @@ Snipit.flyout = (function() {
 			error: function(a, b, c) {
 				console.log(a, b, c);
 			}
-		})
+		});
 	}
 
 	function getSnipitData() {
@@ -72,7 +78,7 @@ Snipit.flyout = (function() {
 			email: Snipit.id.localUserData().primaryEmailAddress,
 			contentType: 'text', // TODO
 			reference: '?' // TODO
-		}
+		};
 	}
 
 	function open(content, position) {
@@ -96,6 +102,14 @@ Snipit.flyout = (function() {
 					.append(snipitBox)
 					.css({ display: 'block', top: position.top, left: position.left });
 			});
+	}
+
+	function shareTwitter(data) {
+		console.log('Snipit.share twitter', data);
+	}
+
+	function shareFacebook(data) {
+		console.log('Snipit.share facebook', data);
 	}
 
 	function close() {
