@@ -16,6 +16,7 @@ Snipit.flyout = (function() {
 				var data = getSnipitData();
 				data.action = 'save';
 				save(data);
+				close();
 			},
 			share: function(btn) {
 				var data = getSnipitData(),
@@ -27,6 +28,7 @@ Snipit.flyout = (function() {
 					case 'facebook' : shareFacebook(data); break;
 				}
 				save(data);
+				close();
 			},
 			comment: function() {
 				var data = getSnipitData();
@@ -87,7 +89,6 @@ Snipit.flyout = (function() {
 				});
 			}
 		});
-		close();
 	}
 
 	function getSnipitData() {
