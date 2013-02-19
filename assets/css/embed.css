@@ -1,0 +1,92 @@
+figure {
+  margin: 0;
+}
+
+.gu-snipit {
+  max-width: 100%;
+  border: 1px solid #E7E7E7;
+  background: #FFF;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+.gu-snipit a {
+  text-decoration: none;
+}
+.gu-snipit p {
+  margin: 0;
+}
+
+.gu-snipit--main {
+  padding: 15px;
+}
+.gu-snipit--main p {
+  line-height: 20px;
+}
+.gu-snipit--title {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0 0 0.5em;
+}
+.gu-snipit--title a {
+  color: #16699A;
+}
+.gu-snipit--main img,
+.gu-snipit--main iframe {
+  max-width: 100%;
+  margin: 0 auto 1em;
+  display: block;
+}
+
+.gu-snipit--metadata {
+  background-color: #FCFCFC;
+  border-top: 1px solid #E7E7E7;
+  font-size: 13px;
+  padding: 10px 15px;
+  text-align: right;
+}
+.gu-snipit--metadata a {
+  color: #247EB3;
+}
+.gu-snipit--metadata p {
+  line-height: 24px;
+}
+.gu-snipit--author,
+.gu-snipit--brand {
+  font-weight: bold;
+}
+.gu-snipit--brand {
+  background: url(http://static.guim.co.uk/static/709280309fa9ec74eda75d9e1d70620c9e9aa7ac/common/images/logos/the-guardian/comment.gif) no-repeat center;
+  width: 125px;
+  height: 24px; /* 17px really, but match line-height for v-centering */
+  vertical-align: bottom;
+
+  /* Hide text */
+  text-align: left;
+  text-indent: -9999px;
+
+  display: inline-block;
+  /* inline-block hack for IE */
+  zoom: 1;
+  *display: inline;
+}
+.gu-snipit--author-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.gu-snipit--author {
+  float: left;
+  margin-right: 1em; /* spacing from source */
+}
+
+.gu-snipit-text .gu-snipit--main {
+  background: url(http://pasteup.guim.co.uk/0.0.3/i/guardian-witness/gw-quote-bg.png) no-repeat left top;
+}
+
+.gu-snipit--main img,
+.gu-snipit--main iframe {
+  max-height: 428px;
+}
