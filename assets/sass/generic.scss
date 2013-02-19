@@ -1,0 +1,16 @@
+.snipit-logo {
+	background: #009bcf;
+	border: 1px solid #ededed;
+	color: #fff;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	padding: 10px;
+
+	[class*="icon-"] {
+		color: #fff;
+	}
+}
+
+[class*="icon-"] {
+	color: #009bcf;
+}

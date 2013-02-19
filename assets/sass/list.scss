@@ -4,5 +4,15 @@
 	.snipit-list-item {
 		border-bottom: 1px solid #ededed;
 		padding: 5px;
+		
+		.action-icon {
+			font-size: 16px;
+			margin-right: 5px;
+		}
+
+		.content {
+			color: #555;
+			margin: 5px 0;
+		}
 	}
 }

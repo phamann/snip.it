@@ -1,3 +1,16 @@
+.snipit-logo {
+  background: #009bcf;
+  border: 1px solid #ededed;
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 10px; }
+  .snipit-logo [class*="icon-"] {
+    color: #fff; }
+
+[class*="icon-"] {
+  color: #009bcf; }
+
 /*
  *  Font Awesome 3.0.2
  *  the iconic font designed for use with Twitter Bootstrap
@@ -1009,6 +1022,8 @@ ul.icons {
   border: none;
   cursor: pointer;
   border-radius: 6px; }
+  .snipit-cta-btn [class*="icon-"] {
+    color: #333; }
 
 .snipit-cta-btn.is-active {
   background-color: #FFFF9C; }
@@ -1022,13 +1037,6 @@ ul.icons {
   cursor: pointer;
   background-color: #FFFF9C;
   text-shadow: 1px 1px 0px white; }
-
-.snipit-logo {
-  background: #f8f8f8;
-  border: 1px solid #ededed;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  padding: 10px; }
 
 .snipit-flyout-container {
   background: #fff;
@@ -1078,7 +1086,6 @@ ul.icons {
       .snipit-flyout-container .menu .menu-item i {
         display: inline-block;
         margin: 2px 6px 0 0;
-        color: #005689;
         font-size: 1.2rem; }
       .snipit-flyout-container .menu .menu-item a {
         font-size: 0.8rem;
@@ -1096,6 +1103,12 @@ ul.icons {
   .snipit-list .snipit-list-item {
     border-bottom: 1px solid #ededed;
     padding: 5px; }
+    .snipit-list .snipit-list-item .action-icon {
+      font-size: 16px;
+      margin-right: 5px; }
+    .snipit-list .snipit-list-item .content {
+      color: #555;
+      margin: 5px 0; }
 
 .snipit-msg {
   display: none;
