@@ -1128,14 +1128,19 @@ ul.icons {
 .snipit-list {
   margin: 15px 0; }
   .snipit-list .snipit-list-item {
+    background-color: #fff;
     border-bottom: 1px solid #ededed;
-    padding: 5px; }
+    padding: 5px;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s; }
     .snipit-list .snipit-list-item .action-icon {
       font-size: 16px;
       margin-right: 5px; }
     .snipit-list .snipit-list-item .content {
       color: #555;
       margin: 5px 0; }
+  .snipit-list .snipit-list-item.fade {
+    background-color: #FFFF9C; }
 
 .snipit-msg {
   display: none;
