@@ -72,6 +72,11 @@
 			a:hover { color: #005689; }
 		}
 
+		.menu-item.small {
+			a { font-size: 11px !important; }
+			[class*="icon-"] { font-size: 13px !important; }
+		}
+
 		.menu-item:first-child {
 			padding-top:0px;
 		}
