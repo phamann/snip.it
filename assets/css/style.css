@@ -1085,6 +1085,10 @@ ul.icons {
         text-decoration: none; }
       .snipit-flyout-container .menu .menu-item a:hover {
         color: #005689; }
+    .snipit-flyout-container .menu .menu-item.small a {
+      font-size: 11px !important; }
+    .snipit-flyout-container .menu .menu-item.small [class*="icon-"] {
+      font-size: 13px !important; }
     .snipit-flyout-container .menu .menu-item:first-child {
       padding-top: 0px; }
     .snipit-flyout-container .menu .menu-item:last-child {

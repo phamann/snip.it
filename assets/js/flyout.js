@@ -87,7 +87,7 @@ Snipit.flyout = (function() {
 	function getSnipitData() {
 		console.log(Snipit.id.localUserData().primaryEmailAddress);
 		return  {
-			articleID: el.find('.headline a').attr('href').replace('http://www.guardian.co.uk', '').replace(window.location.search, '').replace(window.location.hash, ''),
+			articleID: el.find('.headline').attr('data-href').replace('http://www.guardian.co.uk', '').replace(window.location.search, '').replace(window.location.hash, ''),
 			content: $.trim(el.find('.selected-content').html()),
 			email: Snipit.id.localUserData().primaryEmailAddress,
 			contentType: 'text', // TODO
