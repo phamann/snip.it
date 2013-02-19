@@ -2,8 +2,11 @@
 	margin: 15px 0; 
 
 	.snipit-list-item {
+		background-color: #fff;
 		border-bottom: 1px solid #ededed;
 		padding: 5px;
+		-webkit-transition: background-color 1s;
+		transition: background-color 1s;
 		
 		.action-icon {
 			font-size: 16px;
@@ -15,4 +18,9 @@
 			margin: 5px 0;
 		}
 	}
+
+	.snipit-list-item.fade {
+		background-color: #FFFF9C;
+	}
+
 }

@@ -13,7 +13,7 @@ Snipit.list = (function() {
 	function fetch() {
 
 		$.ajax({
-			url: api_url + '/actions' + window.location.pathname,
+			url: api_url + '/actions',
 			dataType: "json",
 			success: function (data) {
 				console.log('list data', data);
@@ -38,14 +38,16 @@ Snipit.list = (function() {
 	function poll() {
 
 			$.ajax({
-				url: api_url + '/poll' + window.location.pathname,
+				url: api_url + '/poll',
 				success: function (data) {
 					// data will be null if polled for a long time without changes
 					if (data !== null) {
 							$(data).each(function() {
 							var actionVerb = this.action.slice(-1) === 'e' ? this.action + 'd' : this.action + 'ed on';
+							var that = this;
 
-							$('.snipit-content', el).prepend('<div class="snipit-list-item">' +
+							$('.snipit-list-content', el).prepend('<div class="snipit-list-item fade"' +
+								'data-id="' + this.id +'" data-reference="' + this.reference +'">' +
 								'<div class="action">' +
 									'<i class="action-icon icon-' + this.action + '"></i> ' +
 									'<b>' + this.username + ' ' + actionVerb + '</b> ' +
@@ -54,6 +56,10 @@ Snipit.list = (function() {
 									'</div>' +
 								'</div>' +
 							'</div>');
+
+							setTimeout(function() {
+								$('[data-id="' + that.id +'"]').removeClass('fade');
+							}, 1000);
 						});
 					}
 				},
