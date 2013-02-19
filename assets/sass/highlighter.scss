@@ -5,6 +5,10 @@
     border: none;
     cursor: pointer;
     border-radius: 6px;
+
+    [class*="icon-"] {
+      color: #333;
+    }
 }
 
     .snipit-cta-btn.is-active {

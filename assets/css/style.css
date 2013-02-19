@@ -1022,6 +1022,8 @@ ul.icons {
   border: none;
   cursor: pointer;
   border-radius: 6px; }
+  .snipit-cta-btn [class*="icon-"] {
+    color: #333; }
 
 .snipit-cta-btn.is-active {
   background-color: #FFFF9C; }
