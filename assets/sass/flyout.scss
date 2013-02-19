@@ -40,10 +40,39 @@
 			padding-top: 10px;
 
 			textarea {
+				color: #333;
 				display: block;
 				border: 1px solid #ededed;
+				font-family: Courier;
 				width: 100%;
 				height: 100px;
+			}
+		}
+
+		.comment-box {
+			display: none;
+			padding-top: 10px;
+
+			.comment-content {
+				border: 1px solid #ededed;
+				color: #333;
+				display: block;
+				font-family: EgyptianText, georgia, serif;
+				height: 100px;
+				padding: 10px;
+				width: 260px;
+			}
+
+			.submit-comment {
+				float: right;
+				background: #009bcf;
+				border: 1px solid #0088b6;
+				color: #fff;
+				text-shadow: 0 1px rgba(0,0,0,0.3);
+				border-radius: 0;
+				font: normal 13px/1.2 Arial,sans-serif;
+				margin: 10px 0 0 5px;
+				padding: 4px 10px;
 			}
 		}
 	}
