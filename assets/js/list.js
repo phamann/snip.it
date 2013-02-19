@@ -4,7 +4,7 @@ Snipit.list = (function() {
 		api_url = 'http://3kgx.t.proxylocal.com/api/snippet';
 
 	function init() {
-		el = $('<div class="snipit-list"><div class="snipit-logo"><i class="icon-cut"></i> Snip.it bits</div></div>')
+		el = $('<div class="snipit-list"><div class="snipit-logo"><i class="icon-cut"></i> Snip.it bits</div><div class="snipit-list-content"></div></div>')
 			.insertAfter('#Right1');
 
 		fetch();
@@ -20,7 +20,7 @@ Snipit.list = (function() {
 				$(data.slice(0,5)).each(function() {
 					var actionVerb = this.action.slice(-1) === 'e' ? this.action + 'd' : this.action + 'ed on';
 
-					el.append('<div class="snipit-list-item">' +
+					$('.snipit-list-content', el).append('<div class="snipit-list-item">' +
 						'<div class="action">' +
 							'<i class="action-icon icon-' + this.action + '"></i> ' +
 							'<b>' + this.username + ' ' + actionVerb + '</b> ' +
@@ -45,7 +45,7 @@ Snipit.list = (function() {
 							$(data).each(function() {
 							var actionVerb = this.action.slice(-1) === 'e' ? this.action + 'd' : this.action + 'ed on';
 
-							el.prepend('<div class="snipit-list-item">' +
+							$('.snipit-content', el).prepend('<div class="snipit-list-item">' +
 								'<div class="action">' +
 									'<i class="action-icon icon-' + this.action + '"></i> ' +
 									'<b>' + this.username + ' ' + actionVerb + '</b> ' +
