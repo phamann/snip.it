@@ -1,0 +1,17 @@
+.snipit-count {
+	background: #009bcf;
+	border-radius: 4px;
+	color: #fff;
+	font-family: Georgia;
+	font-size: 11px;
+	left: -20px;
+	opacity: 0.8;
+	padding: 5px;
+	position: absolute;
+	top: -5px;
+
+	[class*="icon-"] {
+		color: #fff;
+		font-size: 10px;
+	}
+}
