@@ -2,8 +2,12 @@
   "manifest_version": 2,
 
   "name": "Guardian Snip.it",
-  "description": "Snippets and clipping service for the Guardian users",
+  "description": "Social snippets service for users on The Guardian website",
   "version": "0.1",
+  "icons" : {
+    "48" : "assets/img/icon48.png",
+    "128" : "assets/img/icon128.png"
+  },  
   "content_scripts": [
     {
       "matches": ["http://www.guardian.co.uk/*"],
@@ -14,6 +18,7 @@
         "assets/js/flyout.js",
         "assets/js/highlighter.js",
         "assets/js/list.js",
+        "assets/js/message.js",
         "snipit.js"
       ]
     }

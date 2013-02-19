@@ -1026,6 +1026,10 @@ ul.icons {
 .snipit-cta-btn.is-active {
   background-color: #FFFF9C; }
 
+.snipit-snip {
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s; }
+
 .snipit-is-active .snipit-snip:hover,
 .snipit-snip.is-active {
   cursor: pointer;
@@ -1039,7 +1043,7 @@ ul.icons {
   color: #333;
   font-family: "EgyptianText", georgia, serif;
   font-size: 16px;
-  max-width: 400px;
+  max-width: 460px;
   position: absolute;
   top: 50px;
   width: 100%;
@@ -1048,7 +1052,7 @@ ul.icons {
     border-right: 1px dotted #ededed;
     float: left;
     padding: 2%;
-    width: 86%; }
+    width: 61%; }
     .snipit-flyout-container .content .headline {
       font-size: 1rem;
       margin: 0 0 15px 0; }
@@ -1058,18 +1062,31 @@ ul.icons {
     .snipit-flyout-container .content .selected-content {
       border: 1px solid #ededed;
       font-size: 0.75rem;
+      font-style: italic;
       line-height: 1.6em;
       padding: 20px 10px; }
   .snipit-flyout-container .menu {
     float: left;
-    padding: 2% 0 0 2%;
-    width: 7%; }
+    padding: 0 0 0 2%;
+    width: 31%; }
     .snipit-flyout-container .menu .menu-item {
       cursor: pointer;
-      font-size: 1.5rem;
-      margin-bottom: 15px; }
+      border-bottom: 1px dotted #ededed;
+      padding: 10px 0; }
+      .snipit-flyout-container .menu .menu-item i {
+        display: inline-block;
+        margin: 2px 6px 0 0;
+        font-size: 1.2rem; }
       .snipit-flyout-container .menu .menu-item a {
+        font-size: 0.8rem;
+        color: #333;
         text-decoration: none; }
+      .snipit-flyout-container .menu .menu-item a:hover {
+        color: #005689; }
+    .snipit-flyout-container .menu .menu-item:first-child {
+      padding-top: 0px; }
+    .snipit-flyout-container .menu .menu-item:last-child {
+      border-bottom: none; }
 
 .snipit-list {
   margin: 15px 0; }
@@ -1082,3 +1099,18 @@ ul.icons {
     .snipit-list .snipit-list-item .content {
       color: #555;
       margin: 5px 0; }
+
+.snipit-msg {
+  display: none;
+  position: fixed;
+  padding: 10px 20px;
+  background-color: #ccc;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+
+.snipit-msg.is-success {
+  background-color: #9CFF88; }
+
+.snipit-msg.is-error {
+  background-color: #FF8584; }

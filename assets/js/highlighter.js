@@ -31,6 +31,7 @@ Snipit.highlighter = (function() {
 
     function click(e) {
         e.preventDefault();
+        e.stopPropagation();
 
         $('.snipit-snip').removeClass('is-active');
         $(this).addClass('is-active');

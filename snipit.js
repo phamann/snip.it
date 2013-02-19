@@ -33,6 +33,7 @@ Snipit.cta = {
     bind: function() {
         $('.snipit-cta-btn').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
 
             // ID
             if (!Snipit.id.localUserData()) {

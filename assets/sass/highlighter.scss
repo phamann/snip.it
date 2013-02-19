@@ -11,6 +11,11 @@
         background-color: #FFFF9C;
     }
 
+.snipit-snip {
+    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
 .snipit-is-active .snipit-snip:hover,
 .snipit-snip.is-active {
   cursor:pointer;
