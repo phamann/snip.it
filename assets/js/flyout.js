@@ -53,12 +53,14 @@ Snipit.flyout = (function() {
 
 		$(document).on('click', function(e) {
 			if ($(e.target).parents('.snipit-flyout-container').length === 0) {
+				console.log('fooooooo');
 				close();
 			}
 		});
 	}
 
 	function save(data) {
+		var that = this;
 		$.ajax({
 			url: api_url + '/' + data.action,
 			data: JSON.stringify(data),
@@ -66,9 +68,18 @@ Snipit.flyout = (function() {
 			contentType : 'application/json',
 			success: function(res) {
 				console.log('Saved', res);
+				that.close();
+				Snipit.message.show({
+					msg : 'Saved',
+					state : 'success'
+				});
 			},
 			error: function(a, b, c) {
 				console.log(a, b, c);
+				Snipit.message.show({
+					msg : 'There was an error saving, please try again.',
+					state : 'error'
+				});
 			}
 		});
 	}
@@ -90,8 +101,6 @@ Snipit.flyout = (function() {
 			contentBit,
 			snipitBox;
 
-		close();
-
 		$.get(url)
 			.then(function(html) {
 				for (var i in content) {
@@ -109,7 +118,7 @@ Snipit.flyout = (function() {
 
 	function shorten(content) {
 		console.log(length);
-		content = (content.length > 140) ? content.substring(0, 140) + "..." : content;
+		content = (content.length > 100) ? content.substring(0, 100) + "..." : content;
 		content = '"' + content + '"';
 		return content;
 	}
@@ -117,7 +126,8 @@ Snipit.flyout = (function() {
 	function shareTwitter(data) {
 		var url = "http://twitter.com/home?status=",
 			content = shorten(data.content),
-			tweet = encodeURIComponent(content + " via @guardian");
+			location = $('link[rel="shorturl"]')[0].href,
+			tweet = encodeURIComponent(content + " " + location  + " via @guardian");
 
 		url += tweet;
 
@@ -144,6 +154,7 @@ Snipit.flyout = (function() {
 
 	function close() {
 		console.log('Snipit.flyout.close');
+		$('.snipit-snip').removeClass('is-active');
 		el.empty().hide();
 	}
 
