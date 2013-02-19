@@ -4,14 +4,27 @@
 	color: #fff;
 	font-family: Georgia;
 	font-size: 11px;
-	left: -20px;
-	opacity: 0.8;
+	left: -3px;
+	opacity: 1;
 	padding: 5px;
 	position: absolute;
-	top: -5px;
+	top: -3px;
 
-	[class*="icon-"] {
-		color: #fff;
-		font-size: 10px;
+	.number {
+		display: none;
 	}
+}
+
+.snipit-fragment:hover {
+	text-decoration: underline;
+}
+
+.snipit-fragment:hover .snipit-count {
+	left: -12px;
+	opacity: 0.9;
+	top: -12px;
+}
+
+.snipit-fragment:hover .snipit-count .number {
+	display: inline;
 }

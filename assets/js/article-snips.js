@@ -12,17 +12,20 @@ Snipit.articleSnips = (function() {
 					refEl,
 					sentenceIndex,
 					sentenceReg = /\>span\:eq\((\d)\)/;
-				
+				console.log(res);
 				$(res).each(function() {
 					sentenceIndex = this.reference.match(sentenceReg);
 					ref = this.reference.replace(sentenceReg, '').replace('>span', '');
-					refEl = $(ref).css({ position: 'relative' });
-					if (sentenceIndex[1]) {
-						var t = refEl.text().match(/\n|([^\r\n.!?]+([.!?]+|$))/gim);
-						// console.log(t);
+					refEl = $(ref);
+					if (sentenceIndex && sentenceIndex[1]) {
+						var t = refEl.text().match(/\n|([^\r\n.!?]+([.!?]+|$))/gim),
+							tReplace = t[sentenceIndex[1]];
+						
+						refEl.html(refEl.html().replace(tReplace, '<span class="snipit-fragment">' + tReplace + '</span>'));
+						refEl = refEl.find('.snipit-fragment');
 					}
 					
-					refEl.prepend('<span class="snipit-count">' + this.totalActions + '</span>');
+					refEl.css({ position: 'relative' }).prepend('<span class="snipit-count"><span class="number">' + this.totalActions + '</span></span>');
 				});
 			}
 		});
