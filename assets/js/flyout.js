@@ -35,6 +35,7 @@ Snipit.flyout = (function() {
 			embed: function() {
 				var data = getSnipitData();
 				data.action = 'embed';
+				showEmbed(data);
 			}
 		};
 
@@ -53,7 +54,6 @@ Snipit.flyout = (function() {
 
 		$(document).on('click', function(e) {
 			if ($(e.target).parents('.snipit-flyout-container').length === 0) {
-				console.log('fooooooo');
 				close();
 			}
 		});
@@ -104,8 +104,9 @@ Snipit.flyout = (function() {
 		$.get(url)
 			.then(function(html) {
 				for (var i in content) {
+					var pattern = new RegExp('{{ ' + i + ' }}',"g");
 					contentBit = content[i];
-					html = html.replace('{{ ' + i + ' }}', contentBit);
+					html = html.replace(pattern, contentBit);
 				}
 
 				snipitBox = $(html);
@@ -114,6 +115,10 @@ Snipit.flyout = (function() {
 					.append(snipitBox)
 					.css({ display: 'block', top: position.top, left: position.left });
 			});
+	}
+
+	function showEmbed(data) {
+		$('.embed-code', el).slideDown();
 	}
 
 	function shorten(content) {

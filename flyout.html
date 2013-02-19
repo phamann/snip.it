@@ -6,6 +6,27 @@
 		<div class="selected-content">
 			{{ selected_content }}
 		</div>
+        <div class="embed-code">
+            <textarea name="embed">
+                  <figure class="gu-embed gu-snipit gu-snipit-text" itemscope itemtype="http://schema.org/WebPageElement">
+                        <div class="gu-snipit--main">
+                            <h3 class="gu-snipit--title" itemprop="name"><a href="{{ article_link }}" itemprop="url">{{ article_headline }}</a></h3>
+                        <div itemprop="text">
+                            <p>{{ selected_content }}</p>
+                          </div>
+                        </div>
+                        <footer class="gu-snipit--metadata">
+                          <p class="gu-snipit--author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <img src="http://inso.cc/tmp/user-icon.png" alt="Alok Jha, avatar" class="gu-snipit--author-image" itemprop="image"/>
+                            <a href="{{ profile }}" class="element-witness--author-name" itemprop="name">{{ author }},</a>
+                          </p>
+                          <p class="gu-snipit--source">
+                            <time itemprop="dateCreated" datetime="2013-01-04T17:49:01+1000">4 seconds ago</time> from <a href="http://www.guardian.co.uk/" class="gu-snipit--brand" itemprop="provider">The Guardian</a>
+                          </p>
+                        </footer>
+                      </figure>
+            </textarea>
+        </div>
 	</div>
 	<div class="menu">
         <div class="menu-item"><a role="button" title="Comment" data-snipit-action="comment"><i class="icon-comment"></i> Comment</a></div>
