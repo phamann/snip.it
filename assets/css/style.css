@@ -1172,6 +1172,7 @@ ul.icons {
     display: none; }
 
 .snipit-fragment:hover {
+  cursor: pointer;
   text-decoration: underline; }
 
 .snipit-fragment:hover .snipit-count {
