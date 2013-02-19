@@ -22,7 +22,7 @@ Snipit.highlighter = (function() {
                     wrapped.push('<span class="snipit-snip">' + el + "</span>");
                 });
               
-                $paras[i].innerHTML = wrapped.join();
+                $paras[i].innerHTML = wrapped.join("");
             }
         }
 
