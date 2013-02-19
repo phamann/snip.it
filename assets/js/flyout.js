@@ -10,7 +10,7 @@
 var Snipit = Snipit || {};
 Snipit.flyout = (function() {
 	var el,
-		api_url = 'http://8kf6.t.proxylocal.com/api/snippet',
+		api_url = 'http://3kgx.t.proxylocal.com/api/snippet',
 		actions = {
 			save: function() {
 				var data = getSnipitData();
@@ -60,15 +60,12 @@ Snipit.flyout = (function() {
 	}
 
 	function save(data) {
-		var that = this;
 		$.ajax({
 			url: api_url + '/' + data.action,
 			data: JSON.stringify(data),
 			type: 'post',
 			contentType : 'application/json',
 			success: function(res) {
-				console.log('Saved', res);
-				that.close();
 				Snipit.message.show({
 					msg : 'Saved',
 					state : 'success'
@@ -82,14 +79,16 @@ Snipit.flyout = (function() {
 				});
 			}
 		});
+		close();
 	}
 
 	function getSnipitData() {
-		console.log(Snipit.id.localUserData().primaryEmailAddress);
+		console.log(Snipit.id.localUserData());
 		return  {
 			articleID: el.find('.headline').attr('data-href').replace('http://www.guardian.co.uk', '').replace(window.location.search, '').replace(window.location.hash, ''),
 			content: $.trim(el.find('.selected-content').html()),
 			email: Snipit.id.localUserData().primaryEmailAddress,
+			username: Snipit.id.localUserData().publicFields.displayName,
 			contentType: 'text', // TODO
 			reference: el.find('[data-html-reference]').attr('data-html-reference') // TODO
 		};
