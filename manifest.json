@@ -19,6 +19,7 @@
         "assets/js/highlighter.js",
         "assets/js/list.js",
         "assets/js/message.js",
+        "assets/js/article-snips.js",
         "snipit.js"
       ]
     }

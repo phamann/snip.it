@@ -1156,3 +1156,18 @@ ul.icons {
 
 .snipit-msg.is-error {
   background-color: #FF8584; }
+
+.snipit-count {
+  background: #009bcf;
+  border-radius: 4px;
+  color: #fff;
+  font-family: Georgia;
+  font-size: 11px;
+  left: -20px;
+  opacity: 0.8;
+  padding: 5px;
+  position: absolute;
+  top: -5px; }
+  .snipit-count [class*="icon-"] {
+    color: #fff;
+    font-size: 10px; }

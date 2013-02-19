@@ -11,6 +11,7 @@ Snipit.init = function() {
     Snipit.cta.show();
 	Snipit.flyout.init();
 	Snipit.list.init();
+    Snipit.articleSnips.init();
 };
 
 Snipit.setIdSdk = function() {
