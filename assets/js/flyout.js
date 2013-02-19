@@ -32,11 +32,13 @@ Snipit.flyout = (function() {
 				var data = getSnipitData();
 				data.action = 'comment';
 				showComment(data);
+				save(data);
 			},
 			embed: function() {
 				var data = getSnipitData();
 				data.action = 'embed';
 				showEmbed(data);
+				save(data);
 			}
 		};
 
@@ -56,7 +58,7 @@ Snipit.flyout = (function() {
 		// commenting
 		el.on('click', '.submit-comment', postComment);
 
-		$('.submit-comment').on('click', function()   { console.log('CLCIK') });
+		$('.submit-comment').on('click', function() { console.log('CLICK'); });
 
 		$(document).on('click', function(e) {
 			if ($(e.target).parents('.snipit-flyout-container').length === 0) {
@@ -156,18 +158,6 @@ Snipit.flyout = (function() {
 
 		form.attr('action', 'http://d2.guardian.co.uk/post?key=' + d2Id);
 		form.submit();
-		// $.ajax({
-		// 	data: { 'body': commentContent },
-		// 	type: 'post',
-		// 	url: 'http://d2.guardian.co.uk/post?key=' + d2Id,
-
-		// 	success: function(res) {
-		// 		console.log(res);
-		// 	},
-		// 	error: function(a, b, c) {
-		// 		console.log(a, b, c);
-		// 	}
-		// });
 	}
 
 	function shorten(content) {
